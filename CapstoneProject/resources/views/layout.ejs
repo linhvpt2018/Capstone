@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <script src="https://kit.fontawesome.com/d85c30513c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="container mx-auto flex items-center justify-between p-6">
+    <div>
+      <a href="/">
+        <h6>Logo</h6>
+      </a>
+    </div>
+    <div>
+      <ul class="flex items-center">
+        <li><a class="ml-4 font-bold uppercase" href="/products">Our Menu</a></li>
+        <% if(user){ %> 
+        <li><a id="logout-user" class="ml-4 font-bold uppercase" href="/logout">Logout</a> </li>
+        <% } else { %>
+        <li><a class="ml-4 font-bold uppercase" href="/login">login</a> </li>
+        <li><a class="ml-4 font-bold uppercase" href="/register">Register</a> </li>
+        <% } %>
+        <li><a class="ml-4 font-bold uppercase " href="/cart"><i class="fa-solid fa-cart-shopping fa-2xl"><span
+                class="relative"><span id="cart-counter-icon"
+                  class="absolute -top-3 -right-3 bg-red-500 text-red-50 py-1 px-2 text-xs rounded ml-1">
+                  <%= current.shoppingCart ? current.shoppingCart.totalitems : 0; %>
+                </span></span></i></a></li>
+
+      </ul>
+    </div>
+
+  </nav>
+  <%- body %>
+
+</body>
+
+<footer class="footer-1 bg-gray-100 py-8 sm:py-12">
+  <div class="container mx-auto px-4">
+    <div class="sm:flex sm:flex-wrap sm:-mx-4 md:py-4">
+      <div class="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6">
+        <h5 class="text-xl font-bold mb-6">Features</h5>
+        <ul class="list-none footer-links">
+          <li class="mb-2">
+            <a href="#"
+              class="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Cool
+              stuff</a>
+          </li>
+          <li class="mb-2">
+            <a href="#"
+              class="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Random
+              feature</a>
+          </li>
+          <li class="mb-2">
+            <a href="#"
+              class="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Team
+              feature</a>
+          </li>
+          <li class="mb-2">
+            <a href="#"
+              class="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Stuff for
+              developers</a>
+          </li>
+          <li class="mb-2">
+            <a href="#"
+              class="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Another
+              one</a>
+          </li>
+          <li class="mb-2">
+            <a href="#"
+              class="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Last
+              time</a>
+          </li>
+        </ul>
+      </div>
+      <div class="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 sm:mt-0">
+        <h5 class="text-xl font-bold mb-6">Resources</h5>
+        <ul class="list-none footer-links">
+          <li class="mb-2">
+            <a href="#"
+              class="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Resource</a>
+          </li>
+          <li class="mb-2">
+            <a href="#"
+              class="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Resource
+              name</a>
+          </li>
+          <li class="mb-2">
+            <a href="#"
+              class="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Another
+              resource</a>
+          </li>
+          <li class="mb-2">
+            <a href="#"
+              class="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Final
+              resource</a>
+          </li>
+        </ul>
+      </div>
+      <div class="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 md:mt-0">
+        <h5 class="text-xl font-bold mb-6">About</h5>
+        <ul class="list-none footer-links">
+          <li class="mb-2">
+            <a href="#"
+              class="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Team</a>
+          </li>
+          <li class="mb-2">
+            <a href="#"
+              class="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Locations</a>
+          </li>
+          <li class="mb-2">
+            <a href="#"
+              class="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Privacy</a>
+          </li>
+          <li class="mb-2">
+            <a href="#"
+              class="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Terms</a>
+          </li>
+        </ul>
+      </div>
+      <div class="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 md:mt-0">
+        <h5 class="text-xl font-bold mb-6">Help</h5>
+        <ul class="list-none footer-links">
+          <li class="mb-2">
+            <a href="#"
+              class="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Support</a>
+          </li>
+          <li class="mb-2">
+            <a href="#"
+              class="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Help
+              Center</a>
+          </li>
+          <li class="mb-2">
+            <a href="#"
+              class="border-b border-solid border-transparent hover:border-purple-800 hover:text-purple-800">Contact
+              Us</a>
+          </li>
+        </ul>
+      </div>
+      <div class="px-4 mt-4 sm:w-1/3 xl:w-1/6 sm:mx-auto xl:mt-0 xl:ml-auto">
+        <h5 class="text-xl font-bold mb-6 sm:text-center xl:text-left">Stay connected</h5>
+        <div class="flex sm:justify-center xl:justify-start">
+          <a href=""
+            class="w-8 h-8 border border-2 border-gray-400 rounded-full text-center py-1 text-gray-600 hover:text-white hover:bg-blue-600 hover:border-blue-600">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href=""
+            class="w-8 h-8 border border-2 border-gray-400 rounded-full text-center py-1 ml-2 text-gray-600 hover:text-white hover:bg-blue-400 hover:border-blue-400">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href=""
+            class="w-8 h-8 border border-2 border-gray-400 rounded-full text-center py-1 ml-2 text-gray-600 hover:text-white hover:bg-red-600 hover:border-red-600">
+            <i class="fab fa-google-plus-g"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sm:flex sm:flex-wrap sm:-mx-4 mt-6 pt-6 sm:mt-12 sm:pt-12 border-t">
+      <div class="sm:w-full px-4 md:w-1/6">
+        <strong>FWR</strong>
+      </div>
+      <div class="px-4 sm:w-1/2 md:w-1/4 mt-4 md:mt-0">
+        <h6 class="font-bold mb-2">Address</h6>
+        <address class="not-italic mb-4 text-sm">
+          123 6th St.<br>
+          Melbourne, FL 32904
+        </address>
+      </div>
+      <div class="px-4 sm:w-1/2 md:w-1/4 mt-4 md:mt-0">
+        <h6 class="font-bold mb-2">Free Resources</h6>
+        <p class="mb-4 text-sm">Use our HTML blocks for <strong>FREE</strong>.<br>
+          <em>All are MIT License</em>
+        </p>
+      </div>
+      <div class="px-4 md:w-1/4 md:ml-auto mt-6 sm:mt-4 md:mt-0">
+        <button class="px-4 py-2 bg-purple-800 hover:bg-purple-900 rounded text-white">Get Started</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="/js/app.js" defer></script>
+
+</html>

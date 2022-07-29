@@ -1,0 +1,67 @@
+<body>
+    <section class="cart p-8">
+
+        <% if(current.shoppingCart.totalcost > 0) { %> 
+
+        <div class="order container mx-auto w-1/2">
+            <div class="flex items-center pb-2 border-b-2 border-black-100">
+                <i class="fa-solid fa-cart-arrow-down fa-2x "></i>
+                <h1 class="font-bold text-3xl ml-3">Cart Summary</h1>
+
+            </div>
+            <div class="item-details">
+
+                <% for(let cartitem of Object.values(current.shoppingCart.cartitems)) { %> 
+                <div class="flex items-center m-2">
+                    <img class="w-2/6" src="<%= cartitem.cartproduct.productImage%>" alt="">
+                    <h2 class="ml-1"><%= cartitem.cartproduct.productName %></h2>
+                    <h6 class="flex-1 ml-5"><%= cartitem.quantity %></h6>
+                    <h6 class="font-semibold text-lg flex-1"><%= cartitem.cartproduct.productPrice * cartitem.quantity %>$</h6>
+                </div>
+
+               <% } %> 
+
+            </div>
+            <hr>
+            <div>
+                <div class="m-2 p-2">
+                    <span class="font-semibold text-xl  p-2">Total:</span>
+                    <span class="font-semibold text-3xl p-2 primary-color-1"><%= current.shoppingCart.totalcost %>$</span>
+                </div>
+
+                <% if(user) { %> 
+                <div>
+                    <form action="/order" method="POST">
+                        <input id="user-address" class="m-2 border border-gray-400 p-2 rounded-lg" type="text"
+                            placeholder="Enter Your Address" rows="4" cols="50" required name="address">
+                        <br>
+                        <input id="user-mobile" class="m-2 border border-gray-400 p-2 rounded-lg" type="text"
+                            placeholder="Enter Your Mobile Number" required name="mobile">
+                        <br>
+                        <button id="order-btn" class="placeorder-btn" type="submit">Place Order</button>
+                        
+                    </form>
+
+                </div>
+                <% } else { %>
+
+                <a href="/login" class="placeorder-btn m-2">Login</a>
+                <% } %>
+            </div>
+        </div>
+
+
+        <% } else { %>
+
+        <div class="empty-cart">
+            <div class="container mx-auto text-center">
+                    <h1 class="font-bold text-3xl">Cart is Empty</h1>
+                    <div class="p-10 flex justify-center">
+                        <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_qh5z2fdq.json" background="transparent"  speed="1"  style="width: 500px; height: 500px;" loop autoplay></lottie-player>
+                    </div>
+            </div>
+        </div>
+        <% } %>
+    </section>
+
+</body>

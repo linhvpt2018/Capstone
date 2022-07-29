@@ -1,0 +1,92 @@
+.primary-color-1 {
+  color: #fd9d3e;
+}
+
+nav li:hover {
+  color: #fd9d3e;
+  transition: all 0.3s ease-in-out;
+}
+
+.banner-text-color {
+  color: #fd9d3e;
+}
+
+.my-btn-1 {
+  background: #fd9d3e;
+  border: 1px solid #fd9d3e;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 17px 41px;
+  border-radius: 50px;
+  display: inline-block;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 40px;
+}
+.my-btn-1:hover {
+  color: #fd9d3e;
+  background-color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+
+nav li:hover {
+  color: #fd9d3e;
+  transition: all 0.3s ease-in-out;
+}
+
+.quality {
+  background-color: #fd9d3e;
+}
+
+.quality-section-icons:hover {
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.producty-price {
+  color: #fd9d3e;
+}
+
+.add-cart-btn {
+  background: #121619;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid #121619;
+  border-radius: 50px;
+  display: inline-block;
+  padding: 15px 20px;
+}
+.add-cart-btn:hover {
+  color: #fd9d3e;
+  background-color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+
+.placeorder-btn {
+  background: #121619;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid #121619;
+  border-radius: 20px;
+  display: inline-block;
+  padding: 15px 20px;
+}
+.placeorder-btn:hover {
+  color: #121619;
+  background-color: #fd9d3e;
+  transition: all 0.3s ease-in-out;
+}
+
+.table-order-link {
+  color: #fd9d3e;
+}
+.table-order-link:hover {
+  font-style: italic;
+  transition: all 0.3s ease-in-out;
+}
